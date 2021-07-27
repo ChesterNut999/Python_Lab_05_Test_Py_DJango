@@ -1,4 +1,4 @@
-"""app_django URL Configuration
+"""app_agenda URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -16,11 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from core import views
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('teste/', views.teste)
-    path('teste/<nome>/<int:idade>/', views.teste),
-    path('calcula/<int:num1>/<int:num2>/', views.calcula),
-    path('pessoas/')
+    path('agenda/', views.lista_eventos),
+    # path('', views.index)
+    path('', RedirectView.as_view(url='/agenda/'))
 ]

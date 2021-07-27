@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../.idea/Python_Lab_05_Test_Py_DJango.iml" filepath="$PROJECT_DIR$/../.idea/Python_Lab_05_Test_Py_DJango.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/app_django.iml" filepath="$PROJECT_DIR$/.idea/app_django.iml" />
     </modules>
   </component>
