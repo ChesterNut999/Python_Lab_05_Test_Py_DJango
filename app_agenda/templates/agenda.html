@@ -4,6 +4,7 @@
     <a href="eventos/">
         <button type="button">Novo evento</button>
     </a>
+
     <!--    {% for eventos in eventos %}-->
     <!--        <b>{{eventos.titulo}}     {{eventos.usuario}}     {{eventos.data_evento}}     {{eventos.descricao}} </b>-->
     <!--        <p></p>-->
@@ -12,10 +13,13 @@
     <ul style="font-size: 20px">
         {% for eventos in eventos %}
             <li>
-                {{eventos.id}} | {{eventos.titulo}} | {{eventos.usuario}} | {{eventos.get_data_evento}} | {{eventos.descricao}} |
+                <div style={% if eventos.get_evento_atrasado %} "color:red" {% endif %}>
 
-                ( <a href="eventos/?id={{ eventos.id }}">Editar</a>
-                / <a href="eventos/delete/{{ eventos.id }}/">Excluir</a>)
+                    {{eventos.id}} | {{eventos.titulo}} | {{eventos.usuario}} | {{eventos.get_data_evento}} | {{eventos.descricao}} |
+
+                    ( <a href="eventos/?id={{ eventos.id }}">Editar</a>
+                    / <a href="eventos/delete/{{ eventos.id }}/">Excluir</a>)
+                </div>
             </li>
         {% endfor %}
     </ul>
