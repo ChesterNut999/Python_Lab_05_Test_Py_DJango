@@ -1,7 +1,9 @@
 {% extends "model_page.html" %}
 {% block content %}
     <h2>Agendamentos</h2>
-
+    <a href="eventos/">
+        <button type="button">Novo evento</button>
+    </a>
     <!--    {% for eventos in eventos %}-->
     <!--        <b>{{eventos.titulo}}     {{eventos.usuario}}     {{eventos.data_evento}}     {{eventos.descricao}} </b>-->
     <!--        <p></p>-->
@@ -9,7 +11,12 @@
 
     <ul style="font-size: 20px">
         {% for eventos in eventos %}
-            <li>{{eventos.titulo}} | {{eventos.usuario}} | {{eventos.get_data_evento}} | {{eventos.descricao}} </li>
+            <li>
+                {{eventos.id}} | {{eventos.titulo}} | {{eventos.usuario}} | {{eventos.get_data_evento}} | {{eventos.descricao}} |
+
+                ( <a href="eventos/?id={{ eventos.id }}">Editar</a>
+                / <a href="eventos/delete/{{ eventos.id }}/">Excluir</a>)
+            </li>
         {% endfor %}
     </ul>
 {% endblock %}
