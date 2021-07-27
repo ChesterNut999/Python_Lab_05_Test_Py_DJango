@@ -20,7 +20,10 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     path('agenda/', views.lista_eventos),
+    path('agenda/eventos/', views.eventos),
+    path('agenda/eventos/submit', views.eventos),
     # path('', views.index)
     path('', RedirectView.as_view(url='/agenda/')),
     path('login/', views.login_user),
